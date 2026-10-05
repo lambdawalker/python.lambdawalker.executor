@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lambdawalker-executor"
+version = "0.1.0"
+description = "Subprocess execution engine and reporter for LambdaWalker"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+  { name = "LambdaWalker", email = "lambdawalker@isdavid.com" }
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "rich>=14.0.0",
+  "lambdawalker-file>=0.1.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/lambdawalker/python_lw_drawing_tools"
+Repository = "https://github.com/lambdawalker/python_lw_drawing_tools"
+
+[tool.setuptools.packages.find]
+where = ["src"]
