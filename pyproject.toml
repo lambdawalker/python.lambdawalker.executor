@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.8.0"]
+build-backend = "uv_build"
 
 [project]
 name = "lambdawalker-executor"
@@ -9,21 +9,26 @@ description = "Subprocess execution engine and reporter for LambdaWalker"
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [
-  { name = "LambdaWalker", email = "lambdawalker@isdavid.com" }
+    { name = "LambdaWalker", email = "lambdawalker@isdavid.com" }
 ]
 classifiers = [
-  "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3 :: Only",
-  "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: OS Independent",
 ]
 dependencies = [
-  "rich>=14.0.0",
-  "lambdawalker-file>=0.1.0"
+    "lambdawalker-file>=0.1.0",
+    "rich>=14.0.0"
 ]
 
 [project.urls]
-Homepage = "https://github.com/lambdawalker/python_lw_drawing_tools"
-Repository = "https://github.com/lambdawalker/python_lw_drawing_tools"
+Homepage = "https://github.com/lambdawalker/python.lambdawalker.executor"
+Repository = "https://github.com/lambdawalker/python.lambdawalker.executor"
+Issues = "https://github.com/lambdawalker/python.lambdawalker.executor/issues"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.uv.build-backend]
+module-name = "lambdawalker.executor"
+namespace = true
+
+[tool.uv.sources]
+lambdawalker-file = { git = "ssh://git@github.com/lambdawalker/python.lambdawalker.file.git" }
